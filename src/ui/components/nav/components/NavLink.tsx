@@ -14,7 +14,7 @@ export function NavLink({ href, children }: { href: string; children: ReactEleme
 			<LinkWithChannel
 				href={href}
 				className={clsx(
-					isActive ? "border-neutral-900 text-neutral-900" : "border-transparent text-neutral-500",
+					isActive ? "border-black text-black" : "border-transparent text-black",
 					"inline-flex items-center border-b-2 pt-px text-sm font-medium hover:text-neutral-700",
 				)}
 			>

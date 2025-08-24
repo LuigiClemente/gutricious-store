@@ -1,9 +1,10 @@
 import { ProductListByCollectionDocument } from "@/gql/graphql";
 import { executeGraphQL } from "@/lib/graphql";
 import { ProductList } from "@/ui/components/ProductList";
+import { ScrollVideo } from "@/components/ScrollVideo";
 
 export const metadata = {
-	title: "ACME Storefront, powered by Saleor & Next.js",
+	title: "Gutricious Storefront, powered by Saleor & Next.js",
 	description:
 		"Storefront Next.js Example for building performant e-commerce experiences with Saleor - the composable, headless commerce platform for global brands.",
 };
@@ -25,9 +26,16 @@ export default async function Page(props: { params: Promise<{ channel: string }>
 	const products = data.collection?.products.edges.map(({ node: product }) => product);
 
 	return (
-		<section className="mx-auto max-w-7xl p-8 pb-16">
-			<h2 className="sr-only">Product list</h2>
-			<ProductList products={products} />
-		</section>
+		<>
+			<ScrollVideo 
+				videoSrc="/videos/transparent-video.webm"
+				height="300vh"
+				scrollFactor={1}
+			/>
+			<section className="mx-auto max-w-7xl p-8 pb-16">
+				<h2 className="sr-only">Product list</h2>
+				<ProductList products={products} />
+			</section>
+		</>
 	);
 }
