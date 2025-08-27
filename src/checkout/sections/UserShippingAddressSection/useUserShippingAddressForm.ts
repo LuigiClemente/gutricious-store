@@ -1,11 +1,10 @@
-import { useMemo } from "react";
 import {
 	getAddressInputDataFromAddress,
 	getAddressValidationRulesVariables,
 	getByMatchingAddress,
 	isMatchingAddress,
 } from "@/checkout/components/AddressForm/utils";
-import { type AddressFragment, useCheckoutShippingAddressUpdateMutation } from "@/checkout/graphql";
+import { useCheckoutShippingAddressUpdateMutation } from "@/checkout/graphql";
 import { useCheckout } from "@/checkout/hooks/useCheckout";
 import { useFormSubmit } from "@/checkout/hooks/useFormSubmit";
 import { useUser } from "@/checkout/hooks/useUser";
@@ -14,6 +13,7 @@ import {
 	type AddressListFormData,
 	useAddressListForm,
 } from "@/checkout/sections/AddressList/useAddressListForm";
+import { useMemo } from "react";
 
 export const useUserShippingAddressForm = () => {
 	const { checkout } = useCheckout();
@@ -34,7 +34,7 @@ export const useUserShippingAddressForm = () => {
 					checkoutId,
 					validationRules: getAddressValidationRulesVariables(),
 					shippingAddress: getAddressInputDataFromAddress(
-						addressList.find(getByMatchingAddress({ id: selectedAddressId })) as AddressFragment,
+						addressList.find(getByMatchingAddress({ id: selectedAddressId })),
 					),
 				}),
 				onSuccess: ({ formHelpers: { resetForm }, formData }) => resetForm({ values: formData }),

@@ -29,7 +29,7 @@ export const useFetch = <
 			setLoading(true);
 
 			try {
-				const response = await fetchFn((immediateArgs || args) as TArgs);
+				const response = await fetchFn((immediateArgs || args));
 				const result = (await response.json()) as TData;
 				setResult(result);
 				return result;

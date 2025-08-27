@@ -1,11 +1,10 @@
-import { useMemo } from "react";
 import {
 	getAddressInputDataFromAddress,
 	getAddressValidationRulesVariables,
 	getByMatchingAddress,
 	isMatchingAddress,
 } from "@/checkout/components/AddressForm/utils";
-import { type AddressFragment, useCheckoutBillingAddressUpdateMutation } from "@/checkout/graphql";
+import { useCheckoutBillingAddressUpdateMutation } from "@/checkout/graphql";
 import { useCheckout } from "@/checkout/hooks/useCheckout";
 import { type ChangeHandler } from "@/checkout/hooks/useForm";
 import { useFormSubmit } from "@/checkout/hooks/useFormSubmit";
@@ -16,6 +15,7 @@ import {
 	useAddressListForm,
 } from "@/checkout/sections/AddressList/useAddressListForm";
 import { useCheckoutUpdateStateActions } from "@/checkout/state/updateStateStore";
+import { useMemo } from "react";
 
 export const useUserBillingAddressForm = () => {
 	const { checkout } = useCheckout();
@@ -38,7 +38,7 @@ export const useUserBillingAddressForm = () => {
 					checkoutId,
 					validationRules: getAddressValidationRulesVariables(),
 					billingAddress: getAddressInputDataFromAddress(
-						addressList.find(getByMatchingAddress({ id: selectedAddressId })) as AddressFragment,
+						addressList.find(getByMatchingAddress({ id: selectedAddressId })),
 					),
 				}),
 				onFinished: () => setChangingBillingCountry(false),

@@ -1,14 +1,13 @@
-import React, { Suspense } from "react";
-import { getById } from "@/checkout/lib/utils/common";
 import { AddressSectionSkeleton } from "@/checkout/components/AddressSectionSkeleton";
-import { UserAddressSectionContainer } from "@/checkout/sections/UserAddressSectionContainer";
-import { useUserShippingAddressForm } from "@/checkout/sections/UserShippingAddressSection/useUserShippingAddressForm";
+import { useAvailableShippingCountries } from "@/checkout/hooks/useAvailableShippingCountries";
+import { useCheckoutFormValidationTrigger } from "@/checkout/hooks/useCheckoutFormValidationTrigger";
+import { getById } from "@/checkout/lib/utils/common";
 import { AddressCreateForm } from "@/checkout/sections/AddressCreateForm";
 import { AddressEditForm } from "@/checkout/sections/AddressEditForm";
 import { AddressList } from "@/checkout/sections/AddressList/AddressList";
-import { type AddressFragment } from "@/checkout/graphql";
-import { useCheckoutFormValidationTrigger } from "@/checkout/hooks/useCheckoutFormValidationTrigger";
-import { useAvailableShippingCountries } from "@/checkout/hooks/useAvailableShippingCountries";
+import { UserAddressSectionContainer } from "@/checkout/sections/UserAddressSectionContainer";
+import { useUserShippingAddressForm } from "@/checkout/sections/UserShippingAddressSection/useUserShippingAddressForm";
+import React, { Suspense } from "react";
 
 interface UserShippingAddressSectionProps {}
 
@@ -49,7 +48,7 @@ export const UserShippingAddressSection: React.FC<UserShippingAddressSectionProp
 								availableCountries={availableShippingCountries}
 								title="Shipping address"
 								onClose={() => setDisplayAddressEdit()}
-								address={form.values.addressList.find(getById(editedAddressId)) as AddressFragment}
+								address={form.values.addressList.find(getById(editedAddressId))}
 								onUpdate={onAddressUpdateSuccess}
 								onDelete={onAddressDeleteSuccess}
 							/>

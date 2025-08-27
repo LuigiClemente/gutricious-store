@@ -101,8 +101,8 @@ export const AddressForm: FC<PropsWithChildren<AddressFormProps>> = ({
 								placeholder={getFieldLabel("countryArea")}
 								options={
 									countryAreaChoices?.map(({ verbose, raw }) => ({
-										label: verbose as string,
-										value: raw as string,
+										label: verbose ,
+										value: raw ,
 									})) || []
 								}
 							/>

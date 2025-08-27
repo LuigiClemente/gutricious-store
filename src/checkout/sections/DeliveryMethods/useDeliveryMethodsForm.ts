@@ -48,7 +48,7 @@ export const useDeliveryMethodsForm = (): UseFormReturn<DeliveryMethodsFormData>
 				shouldAbort: ({ formData: { selectedMethodId } }) =>
 					!selectedMethodId || selectedMethodId === checkout.deliveryMethod?.id,
 				parse: ({ selectedMethodId, languageCode, checkoutId }) => ({
-					deliveryMethodId: selectedMethodId as string,
+					deliveryMethodId: selectedMethodId ,
 					languageCode,
 					checkoutId,
 				}),

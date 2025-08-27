@@ -2,6 +2,7 @@ import { ProductListByCollectionDocument } from "@/gql/graphql";
 import { executeGraphQL } from "@/lib/graphql";
 import { ProductList } from "@/ui/components/ProductList";
 import { ScrollVideo } from "@/components/ScrollVideo";
+import { ScrollVideoPlayer } from "@/components/ScrollVideoPlayer";
 
 export const metadata = {
 	title: "Gutricious Storefront, powered by Saleor & Next.js",
@@ -27,11 +28,7 @@ export default async function Page(props: { params: Promise<{ channel: string }>
 
 	return (
 		<>
-			<ScrollVideo 
-				videoSrc="/videos/transparent-video.webm"
-				height="300vh"
-				scrollFactor={1}
-			/>
+			<ScrollVideoPlayer videoSrc="./videos/output_highest_quality.mp4" containerHeight="400vh" />
 			<section className="mx-auto max-w-7xl p-8 pb-16">
 				<h2 className="sr-only">Product list</h2>
 				<ProductList products={products} />

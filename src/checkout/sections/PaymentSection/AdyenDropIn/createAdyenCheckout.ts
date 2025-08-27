@@ -112,7 +112,7 @@ export function handlePaymentResult(
 		case AdyenApiPaymentResponse.ResultCodeEnum.Refused: {
 			console.error(result);
 			component.setStatus("error", {
-				message: `${result.payment.resultCode}: ${result.payment.refusalReason as string}`,
+				message: `${result.payment.resultCode}: ${result.payment.refusalReason }`,
 			});
 			return;
 		}

@@ -9,6 +9,6 @@ export const useEvent = <Args extends unknown[], R>(handler: (...args: Args) => 
 	});
 
 	return useCallback((...args: Args) => {
-		return handlerRef.current?.(...args) as R;
+		return handlerRef.current?.(...args) ;
 	}, []);
 };

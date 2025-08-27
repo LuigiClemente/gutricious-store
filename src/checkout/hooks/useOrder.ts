@@ -6,7 +6,7 @@ export const useOrder = () => {
 
 	const [{ data, fetching: loading }] = useOrderQuery({
 		pause: !orderId,
-		variables: { languageCode: "EN_US", id: orderId as string },
+		variables: { languageCode: "EN_US", id: orderId  },
 	});
 
 	return { order: data?.order as OrderFragment, loading };
