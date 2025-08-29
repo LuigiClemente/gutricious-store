@@ -1,3 +1,4 @@
+export const runtime = "edge";
 import { draftMode } from "next/headers";
 
 export async function GET() {

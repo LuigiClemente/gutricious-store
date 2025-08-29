@@ -1,0 +1,4 @@
+name = "your-project-name"
+pages_build_output_dir = ".vercel/output/static"
+compatibility_date = "2025-08-29"
+compatibility_flags = ["nodejs_compat"]

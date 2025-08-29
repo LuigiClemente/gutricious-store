@@ -2,6 +2,8 @@ import Link from "next/link";
 import { invariant } from "ts-invariant";
 import { RootWrapper } from "./pageWrapper";
 
+export const runtime = "edge";
+
 export const metadata = {
 	title: "Checkout · Saleor Storefront example",
 };
@@ -21,9 +23,7 @@ export default async function CheckoutPage(props: {
 			<section className="mx-auto flex min-h-dvh max-w-7xl flex-col p-8">
 				<div className="flex items-center">
 					<Link aria-label="Gutricious homepage" href="/">
-						<span className="font-bold text-xl text-black">
-							Gutricious
-						</span>
+						<span className="text-xl font-bold text-black">Gutricious</span>
 					</Link>
 				</div>
 				<h1 className="mt-8 text-3xl font-bold text-neutral-900">Checkout</h1>

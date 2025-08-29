@@ -1,3 +1,4 @@
+import { useMemo } from "react";
 import {
 	getAddressInputDataFromAddress,
 	getAddressValidationRulesVariables,
@@ -13,7 +14,6 @@ import {
 	type AddressListFormData,
 	useAddressListForm,
 } from "@/checkout/sections/AddressList/useAddressListForm";
-import { useMemo } from "react";
 
 export const useUserShippingAddressForm = () => {
 	const { checkout } = useCheckout();

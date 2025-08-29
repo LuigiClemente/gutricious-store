@@ -2,7 +2,10 @@ import { notFound } from "next/navigation";
 import { type ResolvingMetadata, type Metadata } from "next";
 import { ProductListByCollectionDocument } from "@/gql/graphql";
 import { executeGraphQL } from "@/lib/graphql";
+
 import { ProductList } from "@/ui/components/ProductList";
+
+export const runtime = "edge";
 
 export const generateMetadata = async (
 	props: { params: Promise<{ slug: string; channel: string }> },

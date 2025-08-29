@@ -1,3 +1,4 @@
+import React, { Suspense } from "react";
 import { Checkbox } from "@/checkout/components";
 import { type OptionalAddress } from "@/checkout/components/AddressForm/types";
 import { getByMatchingAddress } from "@/checkout/components/AddressForm/utils";
@@ -12,7 +13,6 @@ import { AddressList } from "@/checkout/sections/AddressList/AddressList";
 import { useBillingSameAsShippingForm } from "@/checkout/sections/GuestBillingAddressSection/useBillingSameAsShippingForm";
 import { UserAddressSectionContainer } from "@/checkout/sections/UserAddressSectionContainer";
 import { useUserBillingAddressForm } from "@/checkout/sections/UserBillingAddressSection/useUserBillingAddressForm";
-import React, { Suspense } from "react";
 
 interface UserBillingAddressSectionProps {}
 

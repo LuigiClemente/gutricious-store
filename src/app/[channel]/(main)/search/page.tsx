@@ -3,6 +3,8 @@ import { OrderDirection, ProductOrderField, SearchProductsDocument } from "@/gql
 import { executeGraphQL } from "@/lib/graphql";
 import { Pagination } from "@/ui/components/Pagination";
 import { ProductList } from "@/ui/components/ProductList";
+
+export const runtime = "edge";
 import { ProductsPerPage } from "@/app/config";
 
 export const metadata = {

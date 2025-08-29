@@ -68,10 +68,7 @@ export const useSubmit = <
 	extractCustomErrors,
 	hideAlerts = false,
 }: UseSubmitProps<TData, TMutationFn, TErrorCodes>): SimpleSubmitFn<TData, TErrorCodes> => {
-	const { setCheckoutUpdateState } = useCheckoutUpdateStateChange(
-		// @ts-expect-error -- something is fishy
-		scope,
-	);
+	const { setCheckoutUpdateState } = useCheckoutUpdateStateChange(scope);
 	const { showErrors } = useAlerts();
 	const { checkout } = useCheckout();
 

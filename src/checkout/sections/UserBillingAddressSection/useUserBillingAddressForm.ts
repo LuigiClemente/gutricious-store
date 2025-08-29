@@ -1,3 +1,4 @@
+import { useMemo } from "react";
 import {
 	getAddressInputDataFromAddress,
 	getAddressValidationRulesVariables,
@@ -15,7 +16,6 @@ import {
 	useAddressListForm,
 } from "@/checkout/sections/AddressList/useAddressListForm";
 import { useCheckoutUpdateStateActions } from "@/checkout/state/updateStateStore";
-import { useMemo } from "react";
 
 export const useUserBillingAddressForm = () => {
 	const { checkout } = useCheckout();

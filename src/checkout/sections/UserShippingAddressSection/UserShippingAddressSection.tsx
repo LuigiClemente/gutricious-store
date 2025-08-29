@@ -1,3 +1,4 @@
+import React, { Suspense } from "react";
 import { AddressSectionSkeleton } from "@/checkout/components/AddressSectionSkeleton";
 import { useAvailableShippingCountries } from "@/checkout/hooks/useAvailableShippingCountries";
 import { useCheckoutFormValidationTrigger } from "@/checkout/hooks/useCheckoutFormValidationTrigger";
@@ -7,7 +8,6 @@ import { AddressEditForm } from "@/checkout/sections/AddressEditForm";
 import { AddressList } from "@/checkout/sections/AddressList/AddressList";
 import { UserAddressSectionContainer } from "@/checkout/sections/UserAddressSectionContainer";
 import { useUserShippingAddressForm } from "@/checkout/sections/UserShippingAddressSection/useUserShippingAddressForm";
-import React, { Suspense } from "react";
 
 interface UserShippingAddressSectionProps {}
 

@@ -1,6 +1,8 @@
 import { CurrentUserOrderListDocument } from "@/gql/graphql";
 import { executeGraphQL } from "@/lib/graphql";
 import { LoginForm } from "@/ui/components/LoginForm";
+
+export const runtime = "edge";
 import { OrderListItem } from "@/ui/components/OrderListItem";
 
 export default async function OrderPage() {

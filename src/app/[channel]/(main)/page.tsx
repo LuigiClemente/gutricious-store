@@ -1,8 +1,9 @@
 import { ProductListByCollectionDocument } from "@/gql/graphql";
 import { executeGraphQL } from "@/lib/graphql";
 import { ProductList } from "@/ui/components/ProductList";
-import { ScrollVideo } from "@/components/ScrollVideo";
 import { ScrollVideoPlayer } from "@/components/ScrollVideoPlayer";
+
+export const runtime = "edge";
 
 export const metadata = {
 	title: "Gutricious Storefront, powered by Saleor & Next.js",
